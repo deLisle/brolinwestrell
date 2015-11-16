@@ -2,4 +2,92 @@
 header.banner {
 	background: #252525;
 	color: #ffffff;
+	text-align: center;
+	// @media (min-width: $screen-sm-min) {
+	// 	height: 278px;
+	// }
+	// @media (min-width: $screen-md-min) {
+	// 	height: 278px;
+	// }
+	@media (min-width: $screen-md-min) {
+		height: 278px;
+	}
+
+	a {
+		color: $inverted-link-color;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $inverted-link-hover-color;
+		}
+	}
+	.brand {
+		display: block;
+		background: url(../images/logo.png) center center no-repeat;
+		background-size: contain;
+		max-width: 506px; 
+		height: 65px;
+		margin: 43px auto 43px;
+		text-indent: -5000em;
+		@media (min-width: $screen-md-min) {
+			margin: 83px auto 43px;
+		}
+	}
+
+	.navbar-center {
+		width: 100%;
+		text-align: center;
+		> li {
+		  float: none;
+		  display: inline-block;
+		}
+	}
+
+	.navbar-header {
+	  	@include clearfix;
+	  	text-align: center;
+		@media (min-width: $grid-float-breakpoint) {
+			float: none;
+		}
+
+		.navbar-toggle {
+			.icon-bar {
+				background: white;
+			}
+			position: relative;
+			float: none;
+			margin: $navbar-padding-horizontal;
+			padding: 9px 10px;
+			@include navbar-vertical-align(34px);
+			background-color: transparent;
+			background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+			border: 1px solid transparent;
+			border-radius: $border-radius-base;
+
+			// We remove the `outline` here, but later compensate by attaching `:hover`
+			// styles to `:focus`.
+			&:focus {
+			outline: 0;
+			}
+		}
+	}
+
+	.navbar-nav {
+		border: 0 none;
+		li {
+			&.current-menu-item {
+				background: #7E1222;
+			}
+			a {
+				padding: 9px 15px 11px;
+				
+				&:hover,
+				&:focus {
+					background: #7E1222;
+				}
+			}
+		}
+	}
+
 }

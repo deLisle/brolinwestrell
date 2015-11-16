@@ -8,3 +8,7 @@
 .sidebar {
   @include make-sm-column($sidebar-sm-columns);
 }
+
+.inner-container {
+	@extend .container-fixed;
+}
