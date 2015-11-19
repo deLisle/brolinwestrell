@@ -12,3 +12,8 @@
 .inner-container {
 	@extend .container-fixed;
 }
+
+.content {
+	margin-left: auto;
+	margin-right: auto;
+}

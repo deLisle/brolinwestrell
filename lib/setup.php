@@ -44,6 +44,8 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
   add_theme_support('html5', ['caption', 'comment-form', 'comment-list', 'gallery', 'search-form']);
 
+  add_image_size( 'blog-thumb', 419, 274, true );
+
   // Use main stylesheet for visual editor
   // To add custom styles edit /assets/styles/layouts/_tinymce.scss
   add_editor_style(Assets\asset_path('styles/main.css'));
@@ -84,7 +86,6 @@ function display_sidebar() {
     // The sidebar will NOT be displayed if ANY of the following return true.
     // @link https://codex.wordpress.org/Conditional_Tags
     is_404(),
-    is_front_page(),
     is_page_template('template-custom.php'),
   ]);
 

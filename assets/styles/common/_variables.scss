@@ -6,7 +6,7 @@ $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
 
 // Colors
-$brand-primary:         #27ae60;
+$brand-primary:         #7E1124;
 
 //** Global textual link color.
 $link-color:            $brand-primary !default;
@@ -17,3 +17,5 @@ $link-hover-decoration: underline !default;
 
 $inverted-link-color: 	#fff;
 $inverted-link-hover-color:      darken($inverted-link-color, 15%) !default;
+
+$blog-article-border: solid 1px #E8E8E8;
