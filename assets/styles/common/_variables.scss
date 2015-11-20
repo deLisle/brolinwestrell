@@ -7,15 +7,26 @@ $sidebar-sm-columns:    4;
 
 // Colors
 $brand-primary:         #7E1124;
+$header-footer-background: #252525;
+$header-footer-color: #B3B2B7;
 
 //** Global textual link color.
-$link-color:            $brand-primary !default;
+$link-color:            #7F828B !default;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 15%) !default;
 //** Link hover decoration.
 $link-hover-decoration: underline !default;
 
-$inverted-link-color: 	#fff;
+$inverted-link-color: 	$header-footer-color;
 $inverted-link-hover-color:      darken($inverted-link-color, 15%) !default;
 
 $blog-article-border: solid 1px #E8E8E8;
+
+$border-radius-base:        0px !default;
+
+$gray-dark : #8B8B95 !default;
+$gray-darker : #333 !default;
+
+$entry-title-color: #6A6A6A !default;
+
+

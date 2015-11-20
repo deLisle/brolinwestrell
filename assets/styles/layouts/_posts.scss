@@ -2,14 +2,40 @@
 	article {
 		padding: 23px 19px;
 		border: $blog-article-border;
-		margin-bottom: 12px;
+		margin-bottom: 20px;
 		.entry-title {
 			margin: 18px 0;
 			padding: 0;
 			@extend .h3;
+			a {
+				color: $entry-title-color;
+				text-decoration: none;
+			}
 		}
 		time.updated {
 			color: #d9d9d9;
 		}
+		.view-more {
+			color: $brand-primary;
+			text-decoration: none;
+		}
+	}
+	.nav-links {
+		margin-top: 40px;
+		margin-bottom: 40px;
+		@extend .clearfix;
+		.nav-previous,.nav-next {
+			a  {
+				@extend .btn;
+				@extend .btn-primary;
+			}
+		}
+		.nav-previous {
+			@extend .pull-left;
+		}
+		.nav-next {
+			@extend .pull-right;
+		}
 	}
 }
+

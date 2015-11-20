@@ -1,0 +1,13 @@
+.content-info {
+	background: $header-footer-background;
+	color: $header-footer-color;
+	margin-top: 40px;
+	.container {
+		@extend .text-center;
+		padding: 85px 20px 45px;
+	}
+	h1,h2,h3,h4,h5,h6 {
+		color: $header-footer-color;
+		font-weight: normal;
+	}
+}

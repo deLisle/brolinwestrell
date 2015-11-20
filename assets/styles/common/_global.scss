@@ -1,1 +1,39 @@
 
+h1,h2,h3,h4,h5,h6 {
+	color: $gray-darker;
+}
+
+hr{
+    border: 0;
+    height: 1px;
+	margin-top: 75px;
+	margin-bottom: 75px;
+	@include gradient-horizontal-three-colors($start-color: rgba(214, 214, 214, 0), $mid-color: rgba(214, 214, 214, 1), $color-stop: 50%, $end-color: rgba(214, 214, 214, 0));
+}
+
+a {
+  color: $link-color;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+ul {
+	padding-left: 30px;
+	li {
+		list-style: square;
+		line-height: 3em;
+	}
+}
+
+.btn {
+	text-decoration: none;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
