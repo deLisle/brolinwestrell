@@ -37,3 +37,13 @@ ul {
 .uppercase {
 	text-transform: uppercase;
 }
+
+.wrap[role=document] {
+	> .content {
+		margin-top: 25px;
+	}
+}
+
+.page-header {
+	border: 0 none;
+}

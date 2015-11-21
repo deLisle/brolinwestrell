@@ -99,6 +99,41 @@ class ThemeCustomizer
             'priority' => 2
         ) ) );
 
+        $wp_manager->add_setting( 'footer_facebook', array(
+            'default'        => '#',
+        ) );
+
+        $wp_manager->add_control( new \WP_Customize_Control( $wp_manager, 'footer_facebook', array(
+            'label'   => 'FooterFacebook Link',
+            'section' => 'customizer_section',
+            'type'      => 'textbox',
+            'settings'   => 'footer_facebook',
+            'priority' => 1
+        ) ) );
+
+        $wp_manager->add_setting( 'footer_linkedin', array(
+            'default'        => '#',
+        ) );
+
+        $wp_manager->add_control( new \WP_Customize_Control( $wp_manager, 'footer_linkedin', array(
+            'label'   => 'Footer Linkedin Link',
+            'section' => 'customizer_section',
+            'type'      => 'textbox',
+            'settings'   => 'footer_linkedin',
+            'priority' => 1
+        ) ) );
+
+        $wp_manager->add_setting( 'footer_mail', array(
+            'default'        => '#',
+        ) );
+
+        $wp_manager->add_control( new \WP_Customize_Control( $wp_manager, 'footer_mail', array(
+            'label'   => 'Footer Mail Link',
+            'section' => 'customizer_section',
+            'type'      => 'textbox',
+            'settings'   => 'footer_mail',
+            'priority' => 1
+        ) ) );
     }
 }
 

@@ -10,4 +10,21 @@
 		color: $header-footer-color;
 		font-weight: normal;
 	}
+
+	.social-media {
+		width: 	47px;
+		height: 47px;
+		display: inline-block;
+		text-indent: -5000em;
+		margin: 7px;
+		&.facebook {
+			background: url(../images/facebook.png) no-repeat center center;
+		}
+		&.linkedin {
+			background: url(../images/linkedin.png) no-repeat center center;
+		}
+		&.mail {
+			background: url(../images/mail.png) no-repeat center center;
+		}
+	}
 }

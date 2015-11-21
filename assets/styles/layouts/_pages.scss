@@ -1,0 +1,14 @@
+.page {
+	.page-header {
+		* {
+			text-align:  center;
+		}
+	}
+	&.page-template-page-with-sidebar {
+		.page-header {
+			* {
+				text-align: left;
+			}
+		}
+	}
+}

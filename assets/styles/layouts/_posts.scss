@@ -39,3 +39,25 @@
 	}
 }
 
+
+
+.single {
+	.entry-content {
+			padding-top: 25px;
+	}
+	
+}
+
+.blog, .single {
+	.main {
+		-webkit-border-image: -webkit-linear-gradient(rgba(214, 214, 214, 0), rgba(214, 214, 214, 1) 50%, rgba(214, 214, 214, 0));
+		-o-border-image: -o-linear-gradient(rgba(214, 214, 214, 0), rgba(214, 214, 214, 1) 50%, rgba(214, 214, 214, 0));
+		-moz-border-image: -moz-linear-gradient(rgba(214, 214, 214, 0), rgba(214, 214, 214, 1) 50%, rgba(214, 214, 214, 0));
+		border-image: linear-gradient(rgba(214, 214, 214, 0), rgba(214, 214, 214, 1) 50%, rgba(214, 214, 214, 0));
+		border-image-slice: 1;
+		border-right: solid 1px rgba(214, 214, 214, 1);
+		border-left: 0 none;
+		border-top: 0 none;
+		border-bottom: 0 none;
+	}
+}
