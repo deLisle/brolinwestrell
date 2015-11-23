@@ -1,7 +1,48 @@
+.footer-contact-newsletter {
+	background: #6D775E;
+	margin-top: 25px;
+	@media (min-width: $screen-sm-min) {
+		margin-top: 65px;
+	}
+
+	color: #fff;
+	h1,h2,h3,h4,h5,h6 {
+		color: #fff;
+	}
+	.col-sm-6 {
+		padding: 20px inherit;
+		@media (min-width: $screen-sm-min) {
+			
+			padding: 65px;
+		}
+		&:first-child {
+			-webkit-border-image: -webkit-linear-gradient(rgba(76, 76, 76, 0), rgba(76, 76, 76, 1) 50%, rgba(76, 76, 76, 0));
+			-o-border-image: -o-linear-gradient(rgba(76, 76, 76, 0), rgba(76, 76, 76, 1) 50%, rgba(76, 76, 76, 0));
+			-moz-border-image: -moz-linear-gradient(rgba(76, 76, 76, 0), rgba(76, 76, 76, 1) 50%, rgba(76, 76, 76, 0));
+			border-image: linear-gradient(rgba(76, 76, 76, 0), rgba(76, 76, 76, 1) 50%, rgba(76, 76, 76, 0));
+			border-image-slice: 2;
+			border-bottom: solid 1px #4c4c4c;
+			border-left: 0;
+			border-top: 0;
+			border-right: 0;
+			@media (min-width: $screen-sm-min) {
+				border-right: solid 1px #4c4c4c;
+				border-bottom: 0;
+			}
+		}
+	}
+	.btn {
+		background: #99B372;
+		color: #fff;
+		border-radius: 4px;
+		padding: 18px 30px;
+		text-transform: uppercase;
+	}
+}
 .content-info {
 	background: $header-footer-background;
 	color: $header-footer-color;
-	margin-top: 40px;
+	margin-top: 0px;
 	.container {
 		@extend .text-center;
 		padding: 85px 20px 45px;

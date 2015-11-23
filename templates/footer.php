@@ -5,6 +5,16 @@
 		<p><?php echo get_theme_mod('footer_content_paragraph', true); ?></p>
 	</div>
 </div>
+<div class="container-fluid footer-contact-newsletter">
+	<div class="container content row">
+		<div class="col-sm-6">
+			<?php echo get_theme_mod('footer_contact_us', true); ?>
+		</div>
+		<div class="col-sm-6">
+			<?php echo get_theme_mod('footer_newsletter', true); ?>
+		</div>
+	</div>
+</div>
 <footer class="content-info">
   <div class="container">
     <?php dynamic_sidebar('sidebar-footer'); ?>

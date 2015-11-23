@@ -108,7 +108,7 @@ class ThemeCustomizer
             'section' => 'customizer_section',
             'type'      => 'textbox',
             'settings'   => 'footer_facebook',
-            'priority' => 1
+            'priority' => 3
         ) ) );
 
         $wp_manager->add_setting( 'footer_linkedin', array(
@@ -120,7 +120,7 @@ class ThemeCustomizer
             'section' => 'customizer_section',
             'type'      => 'textbox',
             'settings'   => 'footer_linkedin',
-            'priority' => 1
+            'priority' => 4
         ) ) );
 
         $wp_manager->add_setting( 'footer_mail', array(
@@ -132,7 +132,31 @@ class ThemeCustomizer
             'section' => 'customizer_section',
             'type'      => 'textbox',
             'settings'   => 'footer_mail',
-            'priority' => 1
+            'priority' => 5
+        ) ) );
+
+        $wp_manager->add_setting( 'footer_contact_us', array(
+            'default'        => '#',
+        ) );
+
+        $wp_manager->add_control( new \WP_Customize_Control( $wp_manager, 'footer_contact_us', array(
+            'label'   => 'Footer Contact Us',
+            'section' => 'customizer_section',
+            'type'      => 'textarea',
+            'settings'   => 'footer_contact_us',
+            'priority' => 6
+        ) ) );
+
+        $wp_manager->add_setting( 'footer_newsletter', array(
+            'default'        => '#',
+        ) );
+
+        $wp_manager->add_control( new \WP_Customize_Control( $wp_manager, 'footer_newsletter', array(
+            'label'   => 'Footer Newsletter',
+            'section' => 'customizer_section',
+            'type'      => 'textarea',
+            'settings'   => 'footer_newsletter',
+            'priority' => 7
         ) ) );
     }
 }
