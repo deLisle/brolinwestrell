@@ -47,3 +47,14 @@ ul {
 .page-header {
 	border: 0 none;
 }
+
+#crumbs {
+	.home {
+		background: url(../images/crumbs_home.png) center center no-repeat;
+		width: 24px;
+		height: 24px;
+		display: inline-block;
+		margin-right: 5px;
+		text-indent: -5000em;
+	}
+}

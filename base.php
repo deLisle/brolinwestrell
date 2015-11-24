@@ -20,6 +20,7 @@ use Roots\Sage\Wrapper;
     ?>
     <div class="wrap container-fluid" role="document">
       <div class="content row container">
+        <?php Setup\theme_breadcrumbs(); ?>
         <section class="main">
           <?php include Wrapper\template_path(); ?>
         </section><!-- /.main -->
