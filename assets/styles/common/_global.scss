@@ -1,3 +1,15 @@
+@font-face {
+	font-family: 'Lasiver';
+	src: url('../fonts/type_dynamic_-_lasiver-webfont..eot'); /* IE9 Compat Modes */
+ 	src:url('../fonts/type_dynamic_-_lasiver-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    	url('../fonts/type_dynamic_-_lasiver-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+    	url('../fonts/type_dynamic_-_lasiver-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+body {
+	font-family: "Lasiver", san-serif;
+}
+
 
 h1,h2,h3,h4,h5,h6 {
 	color: $gray-darker;
