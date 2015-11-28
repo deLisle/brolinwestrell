@@ -17,7 +17,10 @@ $sage_includes = [
   'lib/wrapper.php',   // Theme wrapper class
   'lib/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php',   // Theme wrapper class
   'lib/customizer.php', // Theme customizer
-  'lib/employee_portfolio.php' // Theme customizer
+  'lib/employee_portfolio.php', // Theme customizer
+  'lib/code-box.php', // Theme customizer
+  'lib/template-meta-box.php', // Theme customizer
+  'lib/homepage-content-code-box.php' // Theme customizer
 ];
 
 foreach ($sage_includes as $file) {
