@@ -20,7 +20,8 @@ $sage_includes = [
   'lib/employee_portfolio.php', // Theme customizer
   'lib/code-box.php', // Theme customizer
   'lib/template-meta-box.php', // Theme customizer
-  'lib/homepage-content-code-box.php' // Theme customizer
+  'lib/homepage-content-code-box.php', // Theme customizer
+  'lib/clients.php' // Theme customizer
 ];
 
 foreach ($sage_includes as $file) {

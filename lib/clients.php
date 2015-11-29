@@ -24,12 +24,12 @@ function clients_post_type() {
 		'label'               => __( 'clients', 'sage' ),
 		'description'         => __( 'Clients', 'sage' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'thumbnail' ),
+		'supports'            => array( 'title', 'thumbnail', 'editor' ),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
-		'menu_position'       => 5,
+		'menu_position'       => 3,
 		'show_in_admin_bar'   => true,
 		'show_in_nav_menus'   => false,
 		'can_export'          => true,
@@ -39,7 +39,17 @@ function clients_post_type() {
 		'rewrite'             => false,
 		'capability_type'     => 'page',
 	);
-	register_post_type( 'clients', $args );
+	register_post_type( 'client', $args );
+
+	if (class_exists('MultiPostThumbnails')) {
+		new MultiPostThumbnails(
+			array(
+				'label' => 'Logo',
+				'id' => 'logo',
+				'post_type' => 'client'
+			)
+		);
+	}
 
 }
 add_action( 'init', 'clients_post_type', 0 );

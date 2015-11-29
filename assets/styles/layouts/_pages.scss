@@ -19,6 +19,26 @@
 	}
 }
 
+#clients {
+	@extend .row;
+	.client {
+		img {
+			width: 100%;
+			height: auto;
+			// border-bottom: 1px solid #ccc;
+			// padding-bottom: 15px;
+			// margin-bottom: 5px;
+		}
+		.client-title {
+			@extend .h4;
+			color: #5A5A5A;
+		}
+		.client-description {
+
+		}
+	}
+}
+
 #employees {
 	-webkit-column-count: 1;
 	-webkit-column-gap: 10px;
