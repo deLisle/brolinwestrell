@@ -19,6 +19,7 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        equalHeights('#clients .client');
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -73,5 +74,29 @@
 
   // Load Events
   $(document).ready(UTIL.loadEvents);
+
+  function equalHeights(selector, updated_selector) {
+  
+    if (updated_selector === undefined) {
+      updated_selector = selector;
+    }
+
+    if ($(selector).length === 0) {
+      return false;
+    }
+
+    var height = 0;
+    $(selector).each(function(){
+      height = Math.max( height, $(this).outerHeight() );
+    });
+
+    var maxHeight = $(updated_selector).css('max-height');
+    maxHeight = maxHeight.slice(0, maxHeight.length-2);
+
+    if (height > maxHeight ) {
+      height = maxHeight;
+    }
+    $(updated_selector).outerHeight(height);
+  }
 
 })(jQuery); // Fully reference jQuery after this point.
