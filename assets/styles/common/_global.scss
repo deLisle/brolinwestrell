@@ -1,3 +1,11 @@
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 @font-face {
 	font-family: 'Lasiver';
 	src: url('../fonts/type_dynamic_-_lasiver-webfont..eot'); /* IE9 Compat Modes */
@@ -11,7 +19,7 @@ body {
 }
 
 
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
 	color: $gray-darker;
 }
 

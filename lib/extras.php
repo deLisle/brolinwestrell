@@ -38,11 +38,30 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
  */
 
 // [bartag foo="foo-value"]
-function bartag_func( $atts ) {
-    $a = shortcode_atts( array(
-      'count' => 1,
-    ), $atts );
+function latest_articles( $atts ) {
+  $a = shortcode_atts( array(
+    'count' => 1,
+    'position' => 'right',
+  ), $atts );
+  $class = array('center'=> '', 'left' => 'pull-left col-sm-3', 'right' => 'pull-right col-sm-3');
+  wp_reset_query(); wp_reset_postdata();
+  $posts = \get_posts('post_type=post&order=date&order=DESC&numberposts=' . $a['count']);
+  // echo('class="'.$class[$a['position']].'"' );
+  $html = '<aside class="latest-articles ' . $class[$a['position']] . '">';
 
-    return "foo = {$a['foo']}";
+  foreach ( $posts as $post ) : setup_postdata( $post );
+  $html .='<div class="article" >';
+  if ( has_post_thumbnail($post->ID) ) {
+      $medium_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+      $html .= '<img width="'.$medium_image_url[1].'" height="'.$medium_image_url[2].'" class="attachment-medium wp-post-image medium" src="'.$medium_image_url[0].'" />';
+    }
+  $html .= "<h3 class=\"h4\">". $post->post_title . "</h3>";
+  $html .= '<time class="updated" datetime="'. get_post_time('c', true, $post->ID) .'">'. get_the_date('F j, Y', $post->ID) . '</time>';
+  $html .= '<p>'.substr($post->post_content, 0, 100) .'</p>';
+  $html .= '<a href="' . get_permalink($post->ID) .'" >Read More</a>';
+  $html .= '</div>';
+  endforeach;
+  wp_reset_postdata();
+  return $html.'</div>';
 }
-add_shortcode( 'bartag', 'bartag_func' );
+add_shortcode( 'latest_articles', __NAMESPACE__ . '\\latest_articles' );
