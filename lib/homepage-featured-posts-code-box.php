@@ -33,7 +33,7 @@ class HomepageFeaturedPostCodeBox extends CodeBox\CodeBox
         wp_nonce_field( 'homepage_featured_posts[]', 'brolinwestrell_new_nonce' );
 
         $values = get_post_meta( $post->ID, '_homepage_featured_posts', true );
-        $posts = \query_posts('posts_per_page=-1&post_type=post&status=published');
+        $posts = \query_posts('posts_per_page=-1&post_type=page&status=published');
         echo "<select name=\"homepage_featured_posts[]\" multiple >";
         foreach ($posts as $post) {
             if( in_array($post->ID, $values) ) {
