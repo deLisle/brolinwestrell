@@ -19,7 +19,7 @@
 						<div class="vertically-centered">
 						<h3><?php echo get_the_title($post->ID) ?></h3>
 						<p><?php echo substr($content_post->post_content, 0, 200 ) ?></p>
-						<a href="<?php echo get_permalink($post->ID)?>" class="link-read-more" >Read More</a>
+						<a href="<?php echo get_permalink($post->ID)?>" class="link-read-more" >Läs mer</a>
 						</div>
 					</div>
 					<div class="col-sm-6 wp-post-image-container ">
@@ -48,7 +48,7 @@
 						<div class="vertically-centered">
 						<h3><?php echo get_the_title($post->ID) ?></h3>
 						<p><?php echo substr($content_post->post_content, 0, 200 ) ?></p>
-						<a href="<?php echo get_permalink($post->ID)?>" class="link-read-more" >Read More</a>
+						<a href="<?php echo get_permalink($post->ID)?>" class="link-read-more" >Läs mer</a>
 						</div>
 					</div>
 				</div>
