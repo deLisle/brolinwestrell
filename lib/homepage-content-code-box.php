@@ -30,17 +30,15 @@ class HomepageContentCodeBox extends CodeBox\CodeBox
       'Homepage Second Content',
       function($post) {
         // Add a nonce field so we can check for it later.
-        wp_nonce_field( 'homepage_second_content', 'brolinwestrell_new_nonce' );
+        wp_nonce_field( 'homepage-second-content', 'brolinwestrell_new_nonce' );
 
         $value = get_post_meta( $post->ID, '_homepage_second_content', true );
-        $args = array (
-          'tinymce' => true,
-          'quicktags' => true,
-          'textarea_name' => 'homepage_second_content'
-        );
-        echo "<div>";
-        wp_editor( $value, 'homepage_second_content', $args );
-        echo "</div>";
+
+        wp_editor( $value , 'homepage-second-content', array(
+          'textarea_name' =>'homepage-second-content',
+          'wpautop'       => true,
+          ) );
+
       },
       'page', 'advanced', 'core'
     );
@@ -55,13 +53,13 @@ class HomepageContentCodeBox extends CodeBox\CodeBox
     
     parent::save($post_id);
     
-    if (  !isset( $_POST['homepage_second_content'] )
+    if (  !isset( $_POST['homepage-second-content'] )
      ) {
       return;
     }
     // add more if needed
 
-    update_post_meta( $post_id, '_homepage_second_content', $_POST['homepage_second_content'] );
+    update_post_meta( $post_id, '_homepage_second_content', $_POST['homepage-second-content'] );
   }
 
 }

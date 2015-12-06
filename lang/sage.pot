@@ -24,6 +24,10 @@ msgstr ""
 #: lib/extras.php:31
 msgid "Continued"
 msgstr ""
+msgid "View More"
+msgstr "Läs mer"
+
+
 
 #: lib/setup.php:30
 msgid "Primary Navigation"

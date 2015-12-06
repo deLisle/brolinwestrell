@@ -38,9 +38,16 @@ header.banner {
 	.navbar-center {
 		width: 100%;
 		text-align: center;
-		> li {
-		  float: none;
-		  display: inline-block;
+		float: none;
+		padding: 0;
+		margin: 7px auto;
+		li {
+			float: none;
+			display: block;
+			margin: 0 auto;
+			@media (min-width: $screen-sm-min) {
+				display: inline-block;
+			}
 		}
 	}
 

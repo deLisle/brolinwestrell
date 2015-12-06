@@ -16,7 +16,7 @@
 			wp_nav_menu( array(
 				'theme_location'    => 'primary_navigation',
 				'depth'             => 1,
-				'menu_class'        => 'nav navbar-nav',
+				'menu_class'        => 'nav navbar-nav navbar-center',
 				'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
 				'items_wrap'      	=> '<ul id="%1$s" class="%2$s clearfix">%3$s</ul>',
 				'walker'            => new wp_bootstrap_navwalker())
@@ -26,7 +26,7 @@
 			wp_nav_menu( array(
 				'theme_location'    => 'primary_navigation_2',
 				'depth'             => 1,
-				'menu_class'        => 'nav navbar-nav',
+				'menu_class'        => 'nav navbar-nav navbar-center',
 				'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
 				'items_wrap'      	=> '<ul id="%1$s" class="%2$s clearfix">%3$s</ul>',
 				'walker'            => new wp_bootstrap_navwalker())
