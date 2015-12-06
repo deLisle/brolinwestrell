@@ -70,7 +70,7 @@
 			<?php echo get_theme_mod('footer_contact_us', true); ?>
 		</div>
 		<div class="col-sm-6">
-			<?php echo get_theme_mod('footer_newsletter', true); ?>
+			<?php echo do_shortcode(get_theme_mod('footer_newsletter', true)); ?>
 		</div>
 	</div>
 </div>
