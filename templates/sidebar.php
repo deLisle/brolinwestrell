@@ -1,1 +1,6 @@
-<?php dynamic_sidebar('sidebar-primary'); ?>
+<?php 
+if (is_page()) {
+	dynamic_sidebar('sidebar-page');
+} else {
+	dynamic_sidebar('sidebar-primary');
+} ?>

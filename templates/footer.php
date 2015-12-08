@@ -76,7 +76,6 @@
 </div>
 <footer class="content-info">
   <div class="container">
-    <?php dynamic_sidebar('sidebar-footer'); ?>
     <h2 class="uppercase"><?php echo get_bloginfo('title') ?></h2>
     <h5 class="uppercase"> Copyright <?php echo date('Y') ?></h5>
     <br>
