@@ -114,7 +114,7 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 function theme_breadcrumbs() {
  
   $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-  $delimiter = '&rsaquo;'; // delimiter between crumbs
+  $delimiter = ' &rsaquo; '; // delimiter between crumbs
   $home = 'Home'; // text for the 'Home' link
   $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $before = '<span class="current">'; // tag before the current crumb
@@ -154,8 +154,11 @@ function theme_breadcrumbs() {
     } elseif ( is_single() && !is_attachment() ) {
       if ( get_post_type() != 'post' ) {
         $post_type = get_post_type_object(get_post_type());
-        $slug = $post_type->rewrite;
-        echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
+        // $parent = '';
+        if (get_post_type() == 'client') {
+          $parent = get_page_by_title( 'Kunder');
+          echo '<a href="' . get_permalink($parent->ID) . '">' . $parent->post_title . '</a>';
+        }
         if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
       } else {
         $post_page = get_post(get_option( 'page_for_posts' ), 'OBJECT', 'display');
