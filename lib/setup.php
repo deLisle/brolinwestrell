@@ -158,10 +158,14 @@ function theme_breadcrumbs() {
         echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
         if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
       } else {
+        $post_page = get_post(get_option( 'page_for_posts' ), 'OBJECT', 'display');
+        echo '<a href="'. get_permalink($post_page->ID) .'">' .$post_page->post_title .'</a>' . " {$delimiter} ";
         $cat = get_the_category(); $cat = $cat[0];
-        $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-        if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
-        echo $cats;
+        if ($cat->cat_ID !== 1) {
+          $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+          if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
+          echo $cats;
+        }
         if ($showCurrent == 1) echo $before . get_the_title() . $after;
       }
  

@@ -36,7 +36,7 @@ function clients_post_type() {
 		'has_archive'         => false,		
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		'rewrite'             => false,
+		'rewrite'             => true,
 		'capability_type'     => 'page',
 	);
 	register_post_type( 'client', $args );
