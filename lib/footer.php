@@ -57,13 +57,6 @@
 		endif; ?>
 	</div>
 <?php endif; ?>
-<div class="container-fluid">
-	<div class="container content row text-center">
-		<hr>
-		<h2><?php echo get_theme_mod('footer_content_heading', true); ?></h2>
-		<p><?php echo get_theme_mod('footer_content_paragraph', true); ?></p>
-	</div>
-</div>
 <div class="container-fluid footer-contact-newsletter">
 	<div class="container content row">
 		<div class="col-sm-6">

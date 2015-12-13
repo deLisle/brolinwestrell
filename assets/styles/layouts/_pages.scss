@@ -137,7 +137,7 @@
 	.wp-post-image {
 		width: 	100%;
 		height: auto;
-		margin-bottom: 30px;
+		margin-bottom: 0;
 	}
 }
 
@@ -187,37 +187,23 @@
 //     	vertical-align:middle;   
 // 	}
 // }
-form {
-	@extend .row;
-	.gform_body {
-		@extend .col-sm-8;
-		.gfield {
-			margin: 0;
-			padding: 0;
-			list-style: none;
-			@extend .form-group;
-			@extend .row;
-			.gfield_label {
-				@extend .col-sm-1;
-				@extend .hide;
-				.gfield_required {
-					color: red;
-				}
-			}
-			.ginput_container {
-				@extend .col-sm-11;
-				input[type="text"], input[type="email" textarea {
-					@extend .form-control;
-				}
-			}
+
+.gfield {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	@extend .form-group;
+	.gfield_required {
+		color: red;
+	}
+	.ginput_container {
+		input[type="text"], textarea {
+			@extend .form-control;
 		}
 	}
+}
 
-	.gform_footer {
-		@extend .col-sm-4;
-		.button{
-			@extend .btn;
-			@extend .btn-primary;
-		}
-	} 
+.gform_footer {
+	@extend .btn;
+	@extend .btn-primary;
 }

@@ -14,12 +14,12 @@ header.banner {
 	}
 
 	a {
-		color: $inverted-link-color;
+		color: #fff;
 		text-decoration: none;
 
 		&:hover,
 		&:focus {
-			color: $inverted-link-hover-color;
+			color: #fff;
 		}
 	}
 	.brand {
