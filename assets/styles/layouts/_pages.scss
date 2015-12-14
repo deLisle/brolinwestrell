@@ -76,10 +76,10 @@
 	-webkit-column-fill: auto;
 	-moz-column-count: 1;
 	-moz-column-gap: 10px;
-	-moz-column-fill: auto;
+	-moz-column-fill: inherit;
 	column-count: 1;
 	column-gap: 15px;
-	column-fill: auto;
+	column-fill: inherit;
 	@media (min-width: $screen-sm-min) {
 		-webkit-column-count: 2;
 		-moz-column-count: 2;
@@ -145,6 +145,27 @@
 	background: #F0F1F3;
 	padding-top: 120px;
 	padding-bottom: 120px;
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	
+	.link-read-more {
+		text-transform: uppercase;
+		background: url(../images/read_more_arrow.png) center right no-repeat;
+		height: 38px;
+		padding-right: 80px;
+		vertical-align: middle;
+		display: block;
+		line-height: 2.3;
+		width: 150px;
+		text-decoration: none;
+		color: $brand-primary;
+		margin-top: 50px;
+		margin-bottom: 0;
+	}
 }
 
 .featured-post {
@@ -179,6 +200,10 @@
 		// display: table-cell; vertical-align: middle;
 	}
 }
+
+	.vertically-centered-container {
+		padding: 50px;
+	}
 
 // .vertically-centered-container {
 //     display:block;

@@ -13,7 +13,11 @@
 	}
 	?>
 	<div class="row">
+	<div class="col-sm-12">
+		<p>BrolinWestrell hjälper organisationer att utvecklas och hantera utmaningar. Vi vägleder chefer och medarbetare i att hitta rätt i sina yrkesroller. Och att möta livets prövningar. Enkelt uttryckt är vi en resurs för er organisation när den drabbas av motgång eller behöver ta nya steg.</p>
+	</div>
 		<div class="col-sm-8">
+		
 			<?php get_template_part('templates/content', 'page'); ?>
 		 </div>
 		<?php echo \do_shortcode('[latest_articles count=2 position="right"]') ?>
