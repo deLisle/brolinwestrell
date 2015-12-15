@@ -34,7 +34,9 @@
 			color: #5A5A5A;
 		}
 		.client-description {
-
+			a {
+				text-decoration: none;
+			}
 		}
 	}
 }
@@ -202,7 +204,10 @@
 }
 
 	.vertically-centered-container {
-		padding: 50px;
+		padding: 100px 100px 50px 50px;
+		.link-read-more {
+			margin-top: 25px;
+		}
 	}
 
 // .vertically-centered-container {
