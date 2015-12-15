@@ -113,7 +113,7 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
  */
 function theme_breadcrumbs() {
  
-  $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
+  $showOnHome = 1; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $delimiter = ' &rsaquo; '; // delimiter between crumbs
   $home = 'Home'; // text for the 'Home' link
   $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
@@ -125,7 +125,11 @@ function theme_breadcrumbs() {
  
   if (is_home() || is_front_page()) {
  
-    if ($showOnHome == 1) echo '<div id="crumbs"><a class="home" href="' . $homeLink . '">' . $home . '</a></div>';
+    if ($showOnHome == 1 && !is_front_page()) {
+      $post_page = get_post(get_option( 'page_for_posts' ), 'OBJECT', 'display');
+      echo '<div id="crumbs"><a class="home" href="' . $homeLink . '">' . $home . '</a>'. $delimiter .'<a href="'. get_permalink($post_page->ID) .'">' .$post_page->post_title .'</a></div>';
+      // echo '<a href="'. get_permalink($post_page->ID) .'">' .$post_page->post_title .'</a>' . " {$delimiter} ";
+    }
  
   } else {
  
