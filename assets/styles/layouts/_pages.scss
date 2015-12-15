@@ -231,9 +231,9 @@ form {
 					color: red;
 				}
 				.ginput_container {
-					input[type="text"], textarea {
+					input[type="text"], input[type="email"], textarea {
 						@extend .form-control;
-						padding: 0px;
+						padding: 0 5px;
 						border-radius: 4px;
 					}
 				}
