@@ -46,7 +46,7 @@ ul {
 	padding-left: 30px;
 	li {
 		list-style: square;
-		line-height: 3em;
+		line-height: 1.5em;
 	}
 }
 
@@ -81,14 +81,25 @@ ul {
 
 .google-maps {
    position: relative;
-   padding-bottom: 75%; // This is the aspect ratio
+   padding-bottom: 50%; // This is the aspect ratio
    height: 0;
    overflow: hidden;
+   text-align: center;
 }
 .google-maps iframe {
-    position: absolute;
+    //position: absolute;
     top: 0;
     left: 0;
-    width: 100% !important;
-    height: 100% !important;
+    //width: 50% !important;
+    //height: 50% !important;
+}
+
+.english-flag {
+	float: right;
+	position: relative;
+	top: -20px;
+	@media(max-width: 768px) {
+		float: none;
+		top: -10px;
+	}
 }

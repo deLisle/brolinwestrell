@@ -1,3 +1,9 @@
 .sidebar {
 	padding-top: 60px;
+	.widget-nav-menu {
+		.current-menu-item a {
+			color: #7E1226;
+			text-decoration: none;
+		}
+	}
 }
