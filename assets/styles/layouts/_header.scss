@@ -83,6 +83,7 @@ header.banner {
 	.navbar-nav {
 		border: 0 none;
 		li {
+			margin: 0 5px;
 			&.current-menu-item {
 				background: #7E1222;
 			}
