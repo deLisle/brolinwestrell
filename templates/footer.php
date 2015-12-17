@@ -15,14 +15,7 @@
 			foreach ($posts as $post): $content_post = get_post($post->ID); $count++; ?>
 			<?php if ($count % 2 == 0): ?>
 				<div class="featured-post row">
-					<div class="col-sm-6 post-info vertically-centered-container">
-						<div class="vertically-centered">
-						<h3><?php echo get_the_title($post->ID) ?></h3>
-						<p><?php echo substr($content_post->post_content, 0, 200 ) ?></p>
-						<a href="<?php echo get_permalink($post->ID)?>" class="link-read-more" >Läs mer</a>
-						</div>
-					</div>
-					<div class="col-sm-6 wp-post-image-container ">
+					<div class="col-sm-6 wp-post-image-container featured-row-index-<?=$count;?>">
 						
 						<?php
 							if ( has_post_thumbnail() ) {
@@ -32,10 +25,18 @@
 						?>
 						
 					</div>
+					<div class="col-sm-6 post-info vertically-centered-container">
+						<div class="vertically-centered">
+						<h3><?php echo get_the_title($post->ID) ?></h3>
+						<p><?php echo substr($content_post->post_content, 0, 200 ) ?></p>
+						<a href="<?php echo get_permalink($post->ID)?>" class="link-read-more" >Läs mer</a>
+						</div>
+					</div>
+					
 				</div>
 			<?php else: ?>
 				<div class="featured-post row">
-					<div class="col-sm-6 wp-post-image-container">
+					<div class="col-sm-6 wp-post-image-container featured-row-index-<?=$count;?>">
 						
 						<?php
 							if ( has_post_thumbnail() ) {

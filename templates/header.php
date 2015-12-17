@@ -32,7 +32,10 @@
 				'walker'            => new wp_bootstrap_navwalker())
 			);
 		endif; ?>
+		<a href="/en/"><img src="/wp-content/themes/brolinwestrell/assets/images/eng.png" class="english-flag" alt="English" /></a>
 		</div>
 		</nav>
+		
+		
 	</div>
 </header>

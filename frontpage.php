@@ -13,8 +13,11 @@
 	}
 	?>
 	<div class="row">
-	<div class="col-sm-12">
-		<p>BrolinWestrell hjälper organisationer att utvecklas och hantera utmaningar. Vi vägleder chefer och medarbetare i att hitta rätt i sina yrkesroller. Och att möta livets prövningar. Enkelt uttryckt är vi en resurs för er organisation när den drabbas av motgång eller behöver ta nya steg.</p>
+	<div class="col-sm-12" style="margin-bottom: 40px;">
+		<p style="margin-bottom: 20px;">Vi hjälper organisationer att hantera utmaningar, att klara kriser och att utvecklas. Vi vägleder chefer och medarbetare i att hitta rätt i sina yrkesroller och att möta livets prövningar. I såväl vardag som kris. Enkelt uttryckt är vi en resurs för er organisation när den drabbas av motgång eller behöver ta nya steg.</p>
+		<img src="/wp-content/themes/brolinwestrell/assets/images/front-1.jpg" class="img-responsive" style="height: 233px; margin-right: 15px; float: left;" />
+		<img src="/wp-content/themes/brolinwestrell/assets/images/front-2.jpg" class="img-responsive" style="height: 233px; margin-right: 15px; float: left;" />
+		<img src="/wp-content/themes/brolinwestrell/assets/images/front-3.jpg" class="img-responsive" style="height: 233px; margin-right: 15px; float: left;" />
 	</div>
 		<div class="col-sm-8">
 		
