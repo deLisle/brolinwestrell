@@ -77,6 +77,11 @@ ul {
 		margin-right: 5px;
 		text-indent: -5000em;
 	}
+	span {
+		@media(max-width: 768px) {
+			line-height: 40px;
+		}
+	}
 }
 
 .google-maps {
