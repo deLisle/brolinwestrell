@@ -144,15 +144,21 @@ function theme_breadcrumbs() {
       echo $before . 'Search results for "' . get_search_query() . '"' . $after;
  
     } elseif ( is_day() ) {
+      $post_page = get_post(get_option( 'page_for_posts' ), 'OBJECT', 'display');
+      echo '<a href="'. get_permalink($post_page->ID) .'">' .$post_page->post_title .'</a>' . $delimiter;
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
       echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
       echo $before . get_the_time('d') . $after;
  
     } elseif ( is_month() ) {
+      $post_page = get_post(get_option( 'page_for_posts' ), 'OBJECT', 'display');
+      echo '<a href="'. get_permalink($post_page->ID) .'">' .$post_page->post_title .'</a>' . $delimiter;
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
       echo $before . get_the_time('F') . $after;
  
     } elseif ( is_year() ) {
+      $post_page = get_post(get_option( 'page_for_posts' ), 'OBJECT', 'display');
+      echo '<a href="'. get_permalink($post_page->ID) .'">' .$post_page->post_title .'</a>' . $delimiter;
       echo $before . get_the_time('Y') . $after;
  
     } elseif ( is_single() && !is_attachment() ) {

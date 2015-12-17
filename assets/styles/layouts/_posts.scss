@@ -1,4 +1,4 @@
-.blog {
+.blog, .archive {
 	article {
 		padding: 23px 19px;
 		border: $blog-article-border;
@@ -49,7 +49,7 @@
 	
 }
 
-.blog, .single, .page-template-page-with-sidebar {
+.blog, .single, .page-template-page-with-sidebar, .archive {
 	.main {
 		-webkit-border-image: -webkit-linear-gradient(rgba(214, 214, 214, 0), rgba(214, 214, 214, 1) 50%, rgba(214, 214, 214, 0));
 		-o-border-image: -o-linear-gradient(rgba(214, 214, 214, 0), rgba(214, 214, 214, 1) 50%, rgba(214, 214, 214, 0));
