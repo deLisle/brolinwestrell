@@ -33,9 +33,9 @@
 			);
 		endif; ?>
 		<?php if ( $_SERVER["REQUEST_URI"] == '/en/' ) { ?>
-			<a href="/"><img src="/wp-content/themes/brolinwestrell/assets/images/sv.png" class="english-flag" alt="Swedish" /></a>
+			<a href="/"><img src="/wp-content/themes/brolinwestrell/assets/images/sv.png" width="30" class="english-flag" alt="Swedish" /></a>
 		<?php } else {?>
-			<a href="/en/"><img src="/wp-content/themes/brolinwestrell/assets/images/eng.png" class="english-flag" alt="English" /></a>
+			<a href="/en/"><img src="/wp-content/themes/brolinwestrell/assets/images/eng.png" width="30" class="english-flag" alt="English" /></a>
 		<?php }?>
 		</div>
 		</nav>

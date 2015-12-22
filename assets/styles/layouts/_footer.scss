@@ -12,8 +12,7 @@
 	.col-sm-6 {
 		padding: 20px inherit;
 		@media (min-width: $screen-sm-min) {
-			
-			padding: 65px;
+			padding: 0 35px 35px 35px;
 		}
 		&:first-child {
 			-webkit-border-image: -webkit-linear-gradient(rgba(76, 76, 76, 0), rgba(76, 76, 76, 1) 50%, rgba(76, 76, 76, 0));
@@ -30,6 +29,22 @@
 				border-bottom: 0;
 			}
 		}
+		h3 {
+			padding-top: 35px;
+		}
+		
+		.corner-right, .corner-left {
+			position: absolute;
+			@media(max-width: 768px) {
+				display: none;
+			}
+		}
+		.corner-right {
+			right: -1px;
+		}
+		.corner-left {
+			left: -1px;
+		}
 	}
 	.btn {
 		background: #99B372;
@@ -45,7 +60,7 @@
 	margin-top: 0px;
 	.container {
 		@extend .text-center;
-		padding: 85px 20px 45px;
+		padding: 45px 20px 45px;
 	}
 	h1,h2,h3,h4,h5,h6 {
 		color: $header-footer-color;

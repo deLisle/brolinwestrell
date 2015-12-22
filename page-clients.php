@@ -24,9 +24,6 @@ while (have_posts()) : the_post();
 			}
 			?>
 			<h3 class="client-title"><?php the_title(); ?></h3>
-			<div class="client-description">
-			<?php the_excerpt();?>
-			</div>
 		</div>
 	</a>
 	<?php

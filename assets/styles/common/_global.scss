@@ -86,7 +86,7 @@ ul {
 
 .google-maps {
    position: relative;
-   padding-bottom: 50%; // This is the aspect ratio
+   padding-bottom: 37%; // This is the aspect ratio
    height: 0;
    overflow: hidden;
    text-align: center;
@@ -102,9 +102,11 @@ ul {
 .english-flag {
 	float: right;
 	position: relative;
-	top: -20px;
+	top: -60px;
+	left: 20px;
 	@media(max-width: 768px) {
 		float: none;
 		top: -10px;
+		left: 0;
 	}
 }
