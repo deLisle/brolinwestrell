@@ -78,7 +78,6 @@
   <div class="container">
     <h2 class="uppercase"><?php echo get_bloginfo('title') ?></h2>
     <h5 class="uppercase"> Copyright <?php echo date('Y') ?></h5>
-    <br>
     <section>
     	<a href="<?php echo get_theme_mod('footer_facebook'); ?>" class="social-media facebook">Facebook</a>
     	<a href="<?php echo get_theme_mod('footer_linkedin'); ?>" class="social-media linkedin">LinkedIn</a>

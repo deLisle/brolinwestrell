@@ -1,6 +1,12 @@
 .sidebar {
 	padding-top: 60px;
 	.widget-nav-menu {
+		li {
+			line-height: 2em;
+		}
+		a:hover {
+			color: #7E1226;
+		}
 		.current-menu-item a {
 			color: #7E1226;
 			text-decoration: none;
