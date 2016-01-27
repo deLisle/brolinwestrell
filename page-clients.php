@@ -15,7 +15,7 @@ while (have_posts()) : the_post();
 	$metas = get_post_meta ( get_the_ID(), null, true );
 	?>
 	<a href="<?php the_permalink(); ?>" >
-		<div class="client col-sm-6 col-md-3">
+		<div class="client">
 			<?php
 			if ( has_post_thumbnail() ) {
 				$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
@@ -24,9 +24,6 @@ while (have_posts()) : the_post();
 			}
 			?>
 			<h3 class="client-title"><?php the_title(); ?></h3>
-			<div class="client-description">
-			<?php the_excerpt();?>
-			</div>
 		</div>
 	</a>
 	<?php

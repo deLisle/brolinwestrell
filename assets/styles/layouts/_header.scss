@@ -1,4 +1,3 @@
-
 header.banner {
 	background: $header-footer-background;
 	color: $header-footer-color;
@@ -14,12 +13,12 @@ header.banner {
 	}
 
 	a {
-		color: $inverted-link-color;
+		color: #fff;
 		text-decoration: none;
 
 		&:hover,
 		&:focus {
-			color: $inverted-link-hover-color;
+			color: #fff;
 		}
 	}
 	.brand {
@@ -83,6 +82,7 @@ header.banner {
 	.navbar-nav {
 		border: 0 none;
 		li {
+			margin: 0 5px;
 			&.current-menu-item {
 				background: #7E1222;
 			}
@@ -97,4 +97,12 @@ header.banner {
 		}
 	}
 
+}
+
+#crumbs {
+	.current {
+		background-color: #7E1226;
+		color: #fff;
+		padding: 5px 10px;
+	}
 }

@@ -15,28 +15,27 @@
 			foreach ($posts as $post): $content_post = get_post($post->ID); $count++; ?>
 			<?php if ($count % 2 == 0): ?>
 				<div class="featured-post row">
-					<div class="col-sm-6 wp-post-image-container featured-row-index-<?=$count;?>">
-						
-						<?php
-							if ( has_post_thumbnail() ) {
-								$full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
-								echo '<img width="'.$full_image_url[1].'" height="'.$full_image_url[2].'" class="attachment-full wp-post-image full img-responsive" src="'.$full_image_url[0].'" />';
-							}
-						?>
-						
-					</div>
 					<div class="col-sm-6 post-info vertically-centered-container">
 						<div class="vertically-centered">
 						<h3><?php echo get_the_title($post->ID) ?></h3>
-						<p><?php the_excerpt('') ?></p>
+						<p><?php echo substr($content_post->post_content, 0, 200 ) ?></p>
 						<a href="<?php echo get_permalink($post->ID)?>" class="link-read-more" >Läs mer</a>
 						</div>
 					</div>
-					
+					<div class="col-sm-6 wp-post-image-container ">
+						
+						<?php
+							if ( has_post_thumbnail() ) {
+								$full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+								echo '<img width="'.$full_image_url[1].'" height="'.$full_image_url[2].'" class="attachment-full wp-post-image full img-responsive" src="'.$full_image_url[0].'" />';
+							}
+						?>
+						
+					</div>
 				</div>
 			<?php else: ?>
 				<div class="featured-post row">
-					<div class="col-sm-6 wp-post-image-container featured-row-index-<?=$count;?>">
+					<div class="col-sm-6 wp-post-image-container">
 						
 						<?php
 							if ( has_post_thumbnail() ) {
@@ -48,7 +47,7 @@
 					<div class="col-sm-6 post-info vertically-centered-container">
 						<div class="vertically-centered">
 						<h3><?php echo get_the_title($post->ID) ?></h3>
-						<p><?php the_excerpt('') ?></p>
+						<p><?php echo substr($content_post->post_content, 0, 200 ) ?></p>
 						<a href="<?php echo get_permalink($post->ID)?>" class="link-read-more" >Läs mer</a>
 						</div>
 					</div>
@@ -61,15 +60,9 @@
 <div class="container-fluid footer-contact-newsletter">
 	<div class="container content row">
 		<div class="col-sm-6">
-			<div class="corner-right">
-				<img src="/wp-content/themes/brolinwestrell/assets/images/corner-right.png" width="30" />
-			</div>
 			<?php echo get_theme_mod('footer_contact_us', true); ?>
 		</div>
 		<div class="col-sm-6">
-			<div class="corner-left">
-				<img src="/wp-content/themes/brolinwestrell/assets/images/corner-left.png" width="30" />
-			</div>
 			<?php echo do_shortcode(get_theme_mod('footer_newsletter', true)); ?>
 		</div>
 	</div>
@@ -78,6 +71,7 @@
   <div class="container">
     <h2 class="uppercase"><?php echo get_bloginfo('title') ?></h2>
     <h5 class="uppercase"> Copyright <?php echo date('Y') ?></h5>
+    <br>
     <section>
     	<a href="<?php echo get_theme_mod('footer_facebook'); ?>" class="social-media facebook">Facebook</a>
     	<a href="<?php echo get_theme_mod('footer_linkedin'); ?>" class="social-media linkedin">LinkedIn</a>

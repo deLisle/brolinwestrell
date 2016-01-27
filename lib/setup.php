@@ -44,7 +44,7 @@ function setup() {
   // Enable HTML5 markup support
   // http://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
   add_theme_support('html5', ['caption', 'comment-form', 'comment-list', 'gallery', 'search-form']);
-
+  add_post_type_support( 'page', 'excerpt' );
   add_image_size( 'blog-thumb', 419, 274, true );
 
   // Use main stylesheet for visual editor
@@ -113,8 +113,8 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
  */
 function theme_breadcrumbs() {
  
-  $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-  $delimiter = '&rsaquo;'; // delimiter between crumbs
+  $showOnHome = 1; // 1 - show breadcrumbs on the homepage, 0 - don't show
+  $delimiter = ' &rsaquo; '; // delimiter between crumbs
   $home = 'Home'; // text for the 'Home' link
   $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $before = '<span class="current">'; // tag before the current crumb
@@ -125,7 +125,11 @@ function theme_breadcrumbs() {
  
   if (is_home() || is_front_page()) {
  
-    if ($showOnHome == 1) echo '<div id="crumbs"><a class="home" href="' . $homeLink . '">' . $home . '</a></div>';
+    if ($showOnHome == 1 && !is_front_page()) {
+      $post_page = get_post(get_option( 'page_for_posts' ), 'OBJECT', 'display');
+      echo '<div id="crumbs"><a class="home" href="' . $homeLink . '">' . $home . '</a>'. $delimiter .'<a href="'. get_permalink($post_page->ID) .'">' .$post_page->post_title .'</a></div>';
+      // echo '<a href="'. get_permalink($post_page->ID) .'">' .$post_page->post_title .'</a>' . " {$delimiter} ";
+    }
  
   } else {
  
@@ -140,28 +144,41 @@ function theme_breadcrumbs() {
       echo $before . 'Search results for "' . get_search_query() . '"' . $after;
  
     } elseif ( is_day() ) {
+      $post_page = get_post(get_option( 'page_for_posts' ), 'OBJECT', 'display');
+      echo '<a href="'. get_permalink($post_page->ID) .'">' .$post_page->post_title .'</a>' . $delimiter;
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
       echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
       echo $before . get_the_time('d') . $after;
  
     } elseif ( is_month() ) {
+      $post_page = get_post(get_option( 'page_for_posts' ), 'OBJECT', 'display');
+      echo '<a href="'. get_permalink($post_page->ID) .'">' .$post_page->post_title .'</a>' . $delimiter;
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
       echo $before . get_the_time('F') . $after;
  
     } elseif ( is_year() ) {
+      $post_page = get_post(get_option( 'page_for_posts' ), 'OBJECT', 'display');
+      echo '<a href="'. get_permalink($post_page->ID) .'">' .$post_page->post_title .'</a>' . $delimiter;
       echo $before . get_the_time('Y') . $after;
  
     } elseif ( is_single() && !is_attachment() ) {
       if ( get_post_type() != 'post' ) {
         $post_type = get_post_type_object(get_post_type());
-        $slug = $post_type->rewrite;
-        echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
+        // $parent = '';
+        if (get_post_type() == 'client') {
+          $parent = get_page_by_title( 'Kunder');
+          echo '<a href="' . get_permalink($parent->ID) . '">' . $parent->post_title . '</a>';
+        }
         if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
       } else {
+        $post_page = get_post(get_option( 'page_for_posts' ), 'OBJECT', 'display');
+        echo '<a href="'. get_permalink($post_page->ID) .'">' .$post_page->post_title .'</a>' . " {$delimiter} ";
         $cat = get_the_category(); $cat = $cat[0];
-        $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-        if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
-        echo $cats;
+        if ($cat->cat_ID !== 1) {
+          $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+          if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
+          echo $cats;
+        }
         if ($showCurrent == 1) echo $before . get_the_title() . $after;
       }
  

@@ -23,6 +23,10 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
 	color: $gray-darker;
 }
 
+h2 {
+	font-size: 25px;
+}
+
 hr{
     border: 0;
     height: 1px;
@@ -46,7 +50,7 @@ ul {
 	padding-left: 30px;
 	li {
 		list-style: square;
-		line-height: 3em;
+		line-height: 1.5em;
 	}
 }
 
@@ -76,5 +80,37 @@ ul {
 		display: inline-block;
 		margin-right: 5px;
 		text-indent: -5000em;
+	}
+	span {
+		@media(max-width: 768px) {
+			line-height: 40px;
+		}
+	}
+}
+
+.google-maps {
+   position: relative;
+   padding-bottom: 37%; // This is the aspect ratio
+   height: 0;
+   overflow: hidden;
+   text-align: center;
+}
+.google-maps iframe {
+    //position: absolute;
+    top: 0;
+    left: 0;
+    //width: 50% !important;
+    //height: 50% !important;
+}
+
+.english-flag {
+	float: right;
+	position: relative;
+	top: -60px;
+	left: 20px;
+	@media(max-width: 768px) {
+		float: none;
+		top: -10px;
+		left: 0;
 	}
 }
