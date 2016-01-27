@@ -19,7 +19,7 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
-        equalHeights('#clients .client');
+        //equalHeights('#clients .client');
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
