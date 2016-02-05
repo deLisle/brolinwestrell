@@ -57,7 +57,7 @@ function latest_articles( $atts ) {
     }
   $html .= "<h3 class=\"h4\">". $post->post_title . "</h3>";
   $html .= '<time class="updated" datetime="'. get_post_time('c', true, $post->ID) .'">'. get_the_date('F j, Y', $post->ID) . '</time>';
-  $html .= '<p>'.substr($post->post_content, 0, 100) .'</p>';
+  $html .= '<p>'.substr($post->post_content, 0, 100) .'...</p>';
   $html .= '<a href="' . get_permalink($post->ID) .'" >'. __('L&auml;s mer', 'sage').'</a>';
   $html .= '</div>';
   endforeach;
