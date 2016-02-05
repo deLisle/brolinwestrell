@@ -9,7 +9,7 @@
       if ( has_post_thumbnail() ) {
         $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
         // var_dump($large_image_url);
-        echo '<img width="'.$large_image_url[1].'" height="'.$large_image_url[2].'" class="attachment-large img-responsive wp-post-image large" src="'.$large_image_url[0].'" />';
+        echo '<img width="'.$large_image_url[1].'" height="'.$large_image_url[2].'" class="attachment-large alignleft img-responsive wp-post-image large" src="'.$large_image_url[0].'" />';
       }
       ?>
       <br>
