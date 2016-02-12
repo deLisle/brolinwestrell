@@ -29,6 +29,7 @@ header.banner {
 		height: 65px;
 		margin: 43px auto 43px;
 		text-indent: -5000em;
+		outline: none;
 		@media (min-width: $screen-md-min) {
 			margin: 83px auto 43px;
 		}

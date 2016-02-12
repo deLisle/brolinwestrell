@@ -11,5 +11,13 @@
 			color: #7E1226;
 			text-decoration: none;
 		}
+		.current-menu-item {
+			ul li a {
+				color: #7F828B;
+				&:hover {
+					color: #7F828B;
+				}
+			}
+		}
 	}
 }
