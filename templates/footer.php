@@ -1,4 +1,4 @@
-<?php if ( is_page_template( 'page-about.php' ) ): ?>
+<?php if ( basename( get_page_template() ) === 'page-about.php' ): ?>
 <div class="container-fluid secondary-content">
 		<div class="container content row text-center">
 			<div id="employees"><?php
