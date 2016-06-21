@@ -11,7 +11,7 @@
 }
 
 .inner-container {
-	@extend .container-fixed;
+	@include container-fixed();
 }
 
 .content {
