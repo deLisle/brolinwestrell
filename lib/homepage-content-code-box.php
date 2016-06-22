@@ -43,7 +43,13 @@ class HomepageContentCodeBox extends CodeBox\CodeBox
       'page', 'advanced', 'core'
     );
 
-    $setup->init(null, 'home');
+    $setup->init(function() use ($post) {
+      if (get_option('page_on_front') == $post->ID) {
+        return true;
+      } else {
+        return false;
+      }
+    });
   }
 
   /** 

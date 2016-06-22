@@ -22,6 +22,7 @@ $sage_includes = [
   'lib/template-meta-box.php', // Theme customizer
   'lib/homepage-content-code-box.php', // Theme customizer
   'lib/homepage-featured-posts-code-box.php', // Theme customizer
+  'lib/custom-breadcrumb-title-code-box.php', // Theme customizer
   'lib/clients.php' // Theme customizer
 ];
 

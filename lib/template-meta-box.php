@@ -41,14 +41,25 @@ class TemplateMetaBox
   /**
    * Template Setup
    */
-  function init($template_name = "", $slug = "") {
+  function init_1($template_name = "default", $slug = "") {
 
     // Get the page template post meta
     $page_template = get_post_meta( $this->_post->ID, '_wp_page_template', true );
 
     // If the current page uses our specific
     // template, then output our custom metabox
-    if ( $template_name == $page_template || $slug == $this->_post->post_name || $page_template = 'default') {
+    if ( $template_name == $page_template || $slug == $this->_post->post_name) {
+
+      foreach ($this->_metaboxes as $metabox) {
+        $this->_initialize_meta_box($metabox);
+      }
+    }
+  }
+
+  function init(callable $validation_callback) {
+
+    // template, then output our custom metabox
+    if ( $validation_callback() == true) {
 
       foreach ($this->_metaboxes as $metabox) {
         $this->_initialize_meta_box($metabox);

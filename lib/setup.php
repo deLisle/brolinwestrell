@@ -39,7 +39,7 @@ function setup() {
 
   // Enable post formats
   // http://codex.wordpress.org/Post_Formats
-  add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);
+  // add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);
 
   // Enable HTML5 markup support
   // http://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
@@ -108,6 +108,21 @@ function assets() {
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 
+function get_breadcrumb_title($post_id = null) {
+  if (!$post_id) {
+    global $post;
+    $post_id = $post->ID;
+  }
+  
+  $_custom_breadcrumb_title = get_post_meta( $post_id, '_custom_breadcrumb_title', true );
+
+  if ($_custom_breadcrumb_title) {
+    return $_custom_breadcrumb_title ;
+  } else {
+    return get_the_title($post_id);
+  }
+}
+
 /*
  * Breadcrumbs
  */
@@ -119,6 +134,7 @@ function theme_breadcrumbs() {
   $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $before = '<span class="current">'; // tag before the current crumb
   $after = '</span>'; // tag after the current crumb
+
  
   global $post;
   $homeLink = get_bloginfo('url');
@@ -172,14 +188,16 @@ function theme_breadcrumbs() {
         if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
       } else {
         $post_page = get_post(get_option( 'page_for_posts' ), 'OBJECT', 'display');
-        echo '<a href="'. get_permalink($post_page->ID) .'">' .$post_page->post_title .'</a>' . " {$delimiter} ";
+        if ($post_page->ID != $post->ID) {
+          echo '<a href="'. get_permalink($post_page->ID) .'">' .$post_page->post_title .'</a>' . " {$delimiter} ";
+        }
         $cat = get_the_category(); $cat = $cat[0];
         if ($cat->cat_ID !== 1) {
           $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
           if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
           echo $cats;
         }
-        if ($showCurrent == 1) echo $before . get_the_title() . $after;
+        if ($showCurrent == 1) echo $before . namespace\get_breadcrumb_title() . $after;
       }
  
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
@@ -194,14 +212,14 @@ function theme_breadcrumbs() {
       if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
  
     } elseif ( is_page() && !$post->post_parent ) {
-      if ($showCurrent == 1) echo $before . get_the_title() . $after;
+      if ($showCurrent == 1) echo $before . namespace\get_breadcrumb_title() . $after;
  
     } elseif ( is_page() && $post->post_parent ) {
       $parent_id  = $post->post_parent;
       $breadcrumbs = array();
       while ($parent_id) {
         $page = get_page($parent_id);
-        $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
+        $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . namespace\get_breadcrumb_title($page->ID) . '</a>';
         $parent_id  = $page->post_parent;
       }
       $breadcrumbs = array_reverse($breadcrumbs);
@@ -209,7 +227,7 @@ function theme_breadcrumbs() {
         echo $breadcrumbs[$i];
         if ($i != count($breadcrumbs)-1) echo ' ' . $delimiter . ' ';
       }
-      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . namespace\get_breadcrumb_title() . $after;
  
     } elseif ( is_tag() ) {
       echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
