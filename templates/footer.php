@@ -5,12 +5,12 @@
 			while (have_posts()) : the_post();
 				$metas = get_post_meta ( get_the_ID(), null, true );
 				?>
-				<div class="employee">
+				<div class="employee col-sm-6 col-md-4 col-lg-3">
 					<?php
 					if ( has_post_thumbnail() ) {
 						$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
 						// var_dump($large_image_url);
-						echo '<img width="'.$large_image_url[1].'" height="'.$large_image_url[2].'" class="attachment-large wp-post-image large" src="'.$large_image_url[0].'" />';
+						echo '<img width="'.$large_image_url[1].'"  class="attachment-large wp-post-image large" src="'.$large_image_url[0].'" />';
 					}
 					?>
 					<h3><?php the_title(); ?></h3>

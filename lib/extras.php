@@ -65,3 +65,40 @@ function latest_articles( $atts ) {
   return $html.'</div>';
 }
 add_shortcode( 'latest_articles', __NAMESPACE__ . '\\latest_articles' );
+
+
+
+/**
+* add order column to admin listing screen for header text
+*/
+function add_new_employee_portfolios_column($employee_portfolios_columns) {
+  $employee_portfolios_columns['menu_order'] = "Order";
+  return $employee_portfolios_columns;
+}
+add_action('manage_edit-employee_portfolios_columns', __NAMESPACE__ . '\\add_new_employee_portfolios_column');
+
+/**
+* show custom order column values
+*/
+function show_order_column($name){
+  global $post;
+
+  switch ($name) {
+    case 'menu_order':
+      $order = $post->menu_order;
+      echo $order;
+      break;
+   default:
+      break;
+   }
+}
+add_action('manage_employee_portfolios_posts_custom_column', __NAMESPACE__ . '\\show_order_column');
+
+/**
+* make column sortable
+*/
+function order_column_register_sortable($columns){
+  $columns['menu_order'] = 'menu_order';
+  return $columns;
+}
+add_filter('manage_edit-employee_portfolios_sortable_columns', __NAMESPACE__ . '\\order_column_register_sortable');
